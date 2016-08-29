@@ -12,7 +12,7 @@ $ docker build -t syon/kukai .
 
 ```sh
 # Start Express
-$ docker run -it --rm -v (pwd):/app -p 8080:5000 syon/kukai node index.js
+$ docker run -it --rm -v (pwd):/app -p 3333:3000 syon/kukai node index.js
 ```
 
 ```sh
