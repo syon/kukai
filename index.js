@@ -1,4 +1,5 @@
 var express = require('express');
+var ejs = require('ejs');
 var fs = require('fs');
 
 var app = express();
@@ -15,9 +16,18 @@ app.get('/', function (req, res) {
 });
 
 app.get('/svg', function (req, res) {
+  var args = {
+    ttfName: 'Verdana',
+    ttfStyle: 'Bold Italic',
+    fontStyle: 'italic',
+    fontWeight: 'bold'
+  };
+  var sentence = fs.readFileSync('./sentence.svg.tmpl').toString();
+  fs.writeFileSync('sentence.svg', ejs.render(sentence, args));
+
   var sys = require('util')
   var execSync = require('child_process').execSync;
-  var inkscape = 'inkscape -z -T -f ./sample.svg -l /tmp/out.svg';
+  var inkscape = 'inkscape -z -T -f ./sentence.svg -l /tmp/out.svg';
   var result = execSync(inkscape).toString();
   console.log(result);
   var buf = fs.readFileSync('/tmp/out.svg');
