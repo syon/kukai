@@ -3,6 +3,8 @@ $(function() {
   drawSvg('Oradano-mincho-GSRR', 'Book', 'normal', 'normal');
   drawSvg('Koku Mincho Regular', 'Regular', 'normal', 'normal');
   drawSvg('02UtsukushiMincho', 'Regular', 'italic', 'bold');
+  drawSvg('HarenosoraMincho', 'Regular', 'normal', 'normal');
+  drawSvg('HannariMincho', 'Regular', 'normal', 'normal');
 
 });
 
