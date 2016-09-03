@@ -16,12 +16,8 @@ app.get('/', function (req, res) {
 });
 
 app.get('/svg', function (req, res) {
-  var args = {
-    ttfName: 'Verdana',
-    ttfStyle: 'Bold Italic',
-    fontStyle: 'italic',
-    fontWeight: 'bold'
-  };
+  console.log(req.query);
+  var args = req.query;
   var sentence = fs.readFileSync('./sentence.svg.tmpl').toString();
   fs.writeFileSync('sentence.svg', ejs.render(sentence, args));
 
