@@ -1,6 +1,9 @@
 Kukai
 =====
 
+## Idea
+- [IDEA.md](IDEA.md)
+
 ## Install
 
 ```sh
