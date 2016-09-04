@@ -23,7 +23,9 @@ function drawSvg(tn, ts, fs, fw, txt) {
       textBody: txt
     }
   }).done(function(svg) {
-    var s = $('<div class="sentence" />');
-    $('#hello').append(s.append(svg));
+    var se = $('<div class="box" />');
+    var sv = $('<svg x="0px" y="0px" width="400" height="60" viewBox="0 0 400 40" />');
+    var g  = $(svg).find('g');
+    $('#app').append(se.append(sv.append(g)));
   });
 }
