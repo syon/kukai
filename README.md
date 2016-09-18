@@ -11,6 +11,14 @@ $ docker build -t syon/kukai .
 ```
 
 
+## Dev
+
+```sh
+# Gulp watch
+$ npm run watch
+```
+
+
 ## Run
 
 ```sh
