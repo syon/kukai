@@ -21,15 +21,16 @@ class Container extends React.Component {
   }
 
   componentDidMount() {
-    this.drawSvg('Oradano-mincho-GSRR', 'Book', 'normal', 'normal', 'Oradano明朝フォント');
-    this.drawSvg('Koku Mincho Regular', 'Regular', 'normal', 'normal', '刻明朝フォント');
-    this.drawSvg('02UtsukushiMincho', 'Regular', 'normal', 'normal', 'うつくし明朝体');
-    this.drawSvg('HarenosoraMincho', 'Regular', 'normal', 'normal', 'はれのそら明朝');
-    this.drawSvg('HannariMincho', 'Regular', 'normal', 'normal', 'はんなり明朝');
-    this.drawSvg('Honoka Mincho', 'Regular', 'normal', 'normal', 'ほのか明朝');
-    this.drawSvg('Dejima', 'mincho', 'normal', 'normal', '出島明朝フォント');
-    this.drawSvg('Aozora Mincho', 'Regular', 'normal', 'normal', 'あおぞら明朝 Regular');
-    this.drawSvg('Aozora Mincho', 'Bold', 'normal', 'bold', 'あおぞら明朝 Bold');
+    const txt = 'あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら';
+    this.drawSvg('Oradano-mincho-GSRR', 'Book', 'normal', 'normal', txt);
+    this.drawSvg('Koku Mincho Regular', 'Regular', 'normal', 'normal', txt);
+    this.drawSvg('02UtsukushiMincho', 'Regular', 'normal', 'normal', txt);
+    this.drawSvg('HarenosoraMincho', 'Regular', 'normal', 'normal', txt);
+    this.drawSvg('HannariMincho', 'Regular', 'normal', 'normal', txt);
+    this.drawSvg('Honoka Mincho', 'Regular', 'normal', 'normal', txt);
+    this.drawSvg('Dejima', 'mincho', 'normal', 'normal', txt);
+    this.drawSvg('Aozora Mincho', 'Regular', 'normal', 'normal', txt);
+    this.drawSvg('Aozora Mincho', 'Bold', 'normal', 'bold', txt);
   }
 
   drawSvg(tn, ts, fs, fw, txt) {
@@ -63,9 +64,6 @@ class Container extends React.Component {
           key={l.key}
           x="0px"
           y="0px"
-          width="400"
-          height="60"
-          viewBox="0 0 400 40"
         >
           {svgInner}
         </svg>
@@ -73,9 +71,10 @@ class Container extends React.Component {
     });
     return (
       <div>
-        <h1>Container</h1>
-        <h5>width: {this.props.width} px</h5>
-        {nodes}
+        <h1>Kukai</h1>
+        <div className="svgs">
+          {nodes}
+        </div>
       </div>
     );
   }
