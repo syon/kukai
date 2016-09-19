@@ -2,11 +2,17 @@
   /*height: 150px;*/
 }
 
+.info code {
+  margin-right: 0.75em;
+  color: #757575;
+}
+
 .svgs {
   display: flex;
   flex-direction: column;
 }
 
 .svgs svg {
+  width: 100%;
   height: 72px;
 }

@@ -44,7 +44,11 @@ class Container extends React.Component {
       .then((res) => {
         const g = $(res.data).find('g');
         const list = this.state.list;
-        list.push({ key: tn + ts, g: g.prop('outerHTML') });
+        list.push({
+          key: tn + ts,
+          g: g.prop('outerHTML'),
+          info: { tn, ts, fs, fw },
+        });
         this.setState({ list });
       })
       .catch((res) => {
@@ -60,13 +64,19 @@ class Container extends React.Component {
         svgInner = parser.parse(l.g);
       }
       nodes.push(
-        <svg
-          key={l.key}
-          x="0px"
-          y="0px"
-        >
-          {svgInner}
-        </svg>
+        <div>
+          <div className="info">
+            <code>{l.info.tn}</code>
+            <code>({l.info.ts})</code>
+          </div>
+          <svg
+            key={l.key}
+            x="0px"
+            y="0px"
+          >
+            {svgInner}
+          </svg>
+        </div>
       );
     });
     return (
