@@ -66,8 +66,10 @@ class Container extends React.Component {
       nodes.push(
         <div>
           <div className="info">
-            <code>{l.info.tn}</code>
-            <code>({l.info.ts})</code>
+            <span>
+              <code>{l.info.tn}</code>
+              <code>({l.info.ts})</code>
+            </span>
           </div>
           <svg
             key={l.key}
