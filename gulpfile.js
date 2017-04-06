@@ -16,7 +16,7 @@ var bundler = browserify({
 
 gulp.task('browserify', function () {
   process.env.NODE_ENV = 'production';
-  bundler.plugin('minifyify', {map: 'map.json', output: './public/assets/js/map.json'});
+  bundler.plugin('minifyify', {map: 'map.json', output: './public/map.json'});
   bundler.bundle().pipe(fs.createWriteStream("public/bundle.js"));
 });
 
