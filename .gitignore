@@ -2,3 +2,5 @@
 /node_modules/
 /fonts/*
 sentence.svg
+public/bundle.js
+public/map.json
