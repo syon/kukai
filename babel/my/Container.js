@@ -22,6 +22,15 @@ class Container extends React.Component {
 
   componentDidMount() {
     const txt = 'あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら';
+
+    this.drawSvg('Source Han Serif JP ExtraLight', 'Regular', 'normal', 'normal', txt);
+    this.drawSvg('Source Han Serif JP Light', 'Regular', 'normal', 'normal', txt);
+    this.drawSvg('Source Han Serif JP Regular', 'Regular', 'normal', 'normal', txt);
+    this.drawSvg('Source Han Serif JP Medium', 'Regular', 'normal', 'normal', txt);
+    this.drawSvg('Source Han Serif JP SemiBold', 'Regular', 'normal', 'normal', txt);
+    this.drawSvg('Source Han Serif JP Bold', 'Regular', 'normal', 'normal', txt);
+    this.drawSvg('Source Han Serif JP Heavy', 'Regular', 'normal', 'normal', txt);
+
     this.drawSvg('Oradano-mincho-GSRR', 'Book', 'normal', 'normal', txt);
     this.drawSvg('Koku Mincho Regular', 'Regular', 'normal', 'normal', txt);
     this.drawSvg('02UtsukushiMincho', 'Regular', 'normal', 'normal', txt);
@@ -37,7 +46,7 @@ class Container extends React.Component {
     axios.get('/svg', { params: {
       ttfName: tn,
       ttfStyle: ts,
-      fontStyle: fs, // italic, oblique
+      fontStyle: fs, // normal, italic, oblique
       fontWeight: fw, // 100 - 900, bold, etc.
       textBody: txt,
     } })
