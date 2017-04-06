@@ -44,6 +44,8 @@ $ docker run -it --rm -v (pwd):/app syon/kukai inkscape -z -T -f ./sample.svg -l
 
 ### Listup fonts
 ```sh
+$ docker run -it --rm syon/kukai /bin/sh
+
 # In Docker Container
 /app $ fc-list | grep -v DejaVu
 ```
